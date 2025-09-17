@@ -24,7 +24,6 @@ import (
 	bolt "go.etcd.io/bbolt"
 )
 
-godotenv.Load();
 // ----------------------------- Data Types -----------------------------
 
 // ConnectionStats tracks per-IP activity and baselines
@@ -767,6 +766,7 @@ func stdDev(values []int) float64 {
 // ----------------------------- Entrypoint -----------------------------
 
 func main() {
+	godotenv.Load();
 	d := NewDetector()
 
 	// DB open + load
